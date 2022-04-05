@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+}
+.divImg{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.img{
+    width: 130px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

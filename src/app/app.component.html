@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="divImg"><img class="img" [src]="'/assets/usuario.png'"></div>
+  <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre del Proyecto</mat-label>
+            <input matInput type="text" formControlName="name" autocomplete="off">
+            <mat-error *ngIf="form.controls.name.hasError('required')">
+              Este campo es requerido
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="pass" autocomplete="off">
+          <mat-error *ngIf="form.controls.pass.hasError('required')">
+            Este campo es requerido
+          </mat-error>
+          <mat-error *ngIf="form.get('pass')?.errors?.minlength">
+            Este campo debe tener un minimo de 8 caracteres
+          </mat-error>
+      </mat-form-field>
+  </form>
+  <br><br>
+  <button  mat-flat-button color="accent" [disabled]="!form.valid" (click)="verFrom()">Guardar</button>
+</div>
